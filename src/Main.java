@@ -6,7 +6,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        int answer = ((int) (Math.random() * 100));
+        int answer = ((int) (Math.random() * 100 + 1));
         int input;
 
         Scanner scanner = new Scanner(System.in);
