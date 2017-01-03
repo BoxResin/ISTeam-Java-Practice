@@ -1,18 +1,30 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        int n1, n2, sum = 0;
-        String str = "3 62";
-        Scanner scanner = new Scanner(str);
-        n1 = scanner.nextInt();
-        n2 = scanner.nextInt();
+        int answer = ((int) (Math.random() * 100));
+        int input;
 
-        for(int i = n1; i <= n2; i++)
-            sum += i;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("정답: " + answer);
+        System.out.print("입력: ");
+        input = scanner.nextInt();
 
-        System.out.println("합계: " + sum);
+        while(answer != input)
+        {
+            if(input > answer)
+                System.out.println("높습니다.");
+            else
+                System.out.println("낮습니다.");
+
+            System.out.print("입력: ");
+            input = scanner.nextInt();
+        }
+
+        System.out.println("정답입니다!");
     }
 }
