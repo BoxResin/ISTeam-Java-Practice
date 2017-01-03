@@ -10,7 +10,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        ArrayList<Integer> array = new ArrayList<>();
+        ArrayList <Integer> array = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         int iNum;
         int iOption;
