@@ -4,21 +4,20 @@ public class Main
 {
     public static void main(String[] args)
     {
-
+        int s_s = 0, s_f;
         Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
+        String str = scanner.nextLine();
 
-        System.out.printf("%f\n", 10F);
-
-        int x = 10;
-        if (number < 10 || number > 0)
+        for(int i = 0; i < str.length(); i++)
         {
-            for (int i = 1; i < x; i++)
+            if (str.charAt(i) == ' ')
             {
-                int result = number * i;
-                System.out.printf("%d * %d = %d\n", number, i, result);
+                s_f = i;
+                System.out.println(str.substring(s_s,s_f));
+                s_s = s_f+1;
+                i++;
             }
         }
-
+        System.out.println(str.substring(s_s,str.length()));
     }
 }
