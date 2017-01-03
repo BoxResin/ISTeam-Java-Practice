@@ -5,12 +5,14 @@ public class Main
 	public static void main(String[] args)
 	{
 		Scanner scanner = new Scanner(System.in);
-		String input = scanner.nextLine();
+		System.out.print("x1, y1 좌표 입력: ");
+		int x1 = scanner.nextInt();
+		int y1 = scanner.nextInt();
 
-		String[] words = input.split(" ");
-		for (int i = 0; i < words.length; i++)
-		{
-			System.out.println(words[i]);
-		}
+		System.out.print("x2, y2 좌표 입력: ");
+		int x2 = scanner.nextInt();
+		int y2 = scanner.nextInt();
+
+		System.out.println("거리: " + Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2)));
 	}
 }
