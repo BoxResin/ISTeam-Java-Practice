@@ -4,17 +4,15 @@ public class Main
 {
     public static void main(String[] args)
     {
-        int x1, x2, y1, y2;
-        Scanner scanner = new Scanner(System.in);
+        int n1, n2, sum = 0;
+        String str = "3 62";
+        Scanner scanner = new Scanner(str);
+        n1 = scanner.nextInt();
+        n2 = scanner.nextInt();
 
-        System.out.print("x1 y1 좌표 입력: ");
-        x1 = scanner.nextInt();
-        y1 = scanner.nextInt();
+        for(int i = n1; i <= n2; i++)
+            sum += i;
 
-        System.out.print("x1 y1 좌표 입력: ");
-        x2 = scanner.nextInt();
-        y2 = scanner.nextInt();
-
-        System.out.println("거리: " + Math.sqrt(Math.pow(x1-x2,2) + Math.pow(y1-y2,2)));
+        System.out.println("합계: " + sum);
     }
 }
