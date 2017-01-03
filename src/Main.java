@@ -8,12 +8,16 @@ public class Main
     public static void main(String[] args)
     {
         Scanner scanner = new Scanner(System.in);
-        int iNum = scanner.nextInt();
-        for(int i=0; i< iNum; ++i){
-            for(int j=0; j!=i+1; ++j){
-                System.out.print("*");
+        String str = scanner.nextLine();
+        for(int i=0; i<str.length(); ++i){
+            if(str.charAt(i)!=' ')
+            {
+                System.out.printf("%c", str.charAt(i));
             }
-            System.out.print("\n");
+            else{
+                System.out.print('\n');
+            }
         }
+
     }
 }
