@@ -1,7 +1,4 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-
-import static java.lang.System.exit;
 
 /**
  * Created by HyeRyeong on 2016-12-30.
@@ -10,54 +7,18 @@ public class Main
 {
     public static void main(String[] args)
     {
-        ArrayList<Integer> array = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
-        int iNum;
-        int iOption;
-        int iSum = 0;
+        int x1, y1, x2, y2;
 
-        while (true)
-        {
-            System.out.println("[메뉴]");
-            System.out.println("1. 숫자 추가");
-            System.out.println("2. 숫자 제거");
-            System.out.println("3. 합계 구하기");
-            System.out.println("4. 끝내기");
-            System.out.print("명령 입력: ");
+        System.out.print("x1, y1 좌표 입력: ");
+        x1 = scanner.nextInt();
+        y1 = scanner.nextInt();
 
-            iOption = scanner.nextInt();
+        System.out.print("x2, y2 좌표 입력: ");
+        x2 = scanner.nextInt();
+        y2 = scanner.nextInt();
 
-            switch (iOption)
-            {
-                case 1:
-                    System.out.print("숫자 입력: ");
-                    iNum = scanner.nextInt();
-                    array.add(iNum);
-                    break;
-                case 2:
-                    System.out.print("삭제할 숫자 위치 입력: ");
-                    iNum = scanner.nextInt();
-                    if(iNum < array.size())
-                    {
-                        array.remove(iNum);
-                    }
-                    else{
-                        System.out.println("ERROR");
-                    }
-                    break;
-                case 3:
-                    for(int i=0; i<array.size(); ++i){
-                        iSum += array.get(i);
-                    }
-                    System.out.printf("합계: %d\n", iSum);
-                    break;
-                case 4:
-                    exit(1);
+        System.out.printf("거리: %f", Math.sqrt(((x1-x2)*(x1-x2))+ ((y1-y2)*(y1-y2))));
 
-            }
-
-        }
     }
-
-
 }
