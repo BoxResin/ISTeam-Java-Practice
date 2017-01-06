@@ -1,20 +1,32 @@
-import java.util.Scanner;
+import yoonseong.ArrayList;
 
 public class Main
 {
     public static void main(String[] args)
     {
-        Scanner n = new Scanner(System.in);
-        double x1, x2, y1, y2;
-        double ans;
-        System.out.print("x1, y1 좌표 입력 : ");
-        x1 = n.nextDouble();
-        y1 = n.nextDouble();
-        System.out.print("x2, y2 좌표 입력 : ");
-        x2 = n.nextDouble();
-        y2 = n.nextDouble();
+        ArrayList array = new ArrayList();
+        printArray(array);
+        array.add(20);
+        array.add(214);
+        array.add(125);
+        array.add(2);
+        array.add(2214);
+        array.add(221);
+        array.add(14);
+        printArray(array);
+        array.remove(4);
+        printArray(array);
+        System.out.println("현재 크기 : " + array.size());
+        array.set(2, 2798);
+        printArray(array);
+    }
 
-        ans = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
-        System.out.printf("거리 : %f\n", ans);
+    public static void printArray(ArrayList array)
+    {
+        for (int i = 0; i < array.size(); i++)
+        {
+            System.out.println(array.get(i));
+        }
+        System.out.println();
     }
 }
