@@ -1,6 +1,3 @@
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  * Created by HyeRyeong on 2016-12-30.
  */
@@ -8,28 +5,16 @@ public class Main
 {
     public static void main(String[] args)
     {
+        //Thread문에서 발생하는 오류는 반드시  try, catch문으로 잡아줘야 함
         try
         {
-            input();
-        } catch (InputMismatchException e)
-        {
-            e.printStackTrace();
-        } catch (ArithmeticException e)
+            Thread.sleep(3000); //프로그램이 3초간 멈춤
+        } catch (InterruptedException e)    //반드시 호출해야하는 오류
         {
             e.printStackTrace();
         }
 
     }
 
-    public static void input() throws InputMismatchException, ArithmeticException
-    {
-        //예외 처리
-        Scanner scanner = new Scanner(System.in);
 
-        //실행할 코드를 쭉 적는다
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int result = a / b;
-        System.out.println("결과: " + result);
-    }
 }
