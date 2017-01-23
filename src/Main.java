@@ -27,7 +27,7 @@ public class Main
         } catch (ArithmeticException e)
         {
             //각 exception 안에서도 각각의 상황의 따른 필터링이 필요함
-            if (e.getMessage().equals("by zero"))
+            if (e.getMessage().equals("by zero")) //적절한 비교 메시지
                 System.out.println("숫자를 0으로 나눴습니다.");
             e.printStackTrace();
         } catch (Exception e)
