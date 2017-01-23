@@ -1,3 +1,5 @@
+import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -29,17 +31,24 @@ public class Main
         try
         {
             //실행할 코드를 쭉 적는다.
-            String str = scanner.next();
-            if (!str.equals("Hello"))
-                //throw <Exception 타입의 객체>
-                //try 블록 내에서 이 코드가 실행되는 순간 catch 블록 안으로 점프함
-                //catch문에 한 번 빠지면 다시 try문으로 돌아갈 수 없다
-                throw new Exception();
-        }
-        catch (Exception e)
+            int number = scanner.nextInt();
+
+            throw new FileNotFoundException();
+        } catch (Exception e)
         {
             //예외가 발생했을 때 실행할 코드
-            System.out.println("Hello를 입력하세요.");
+            //입력 관련 예외
+            if (e instanceof InputMismatchException)
+            {
+                System.out.println("입력 관련 예외");
+            }
+
+            //파일 찾을 수 없음 예외
+            else if (e instanceof FileNotFoundException)
+            {
+                System.out.println("파일 찾을 수 없음 예외");
+            }
+            e.printStackTrace();
         }
     }
 
