@@ -34,23 +34,17 @@ public class Main
             int number = scanner.nextInt();
 
             throw new FileNotFoundException();
+        } catch (InputMismatchException e)
+        {
+            System.out.println("입력 관련 예외");
+            e.printStackTrace();
+        } catch (FileNotFoundException e)
+        {
+            System.out.println("파일 찾을 수 없음 예외");
+            e.printStackTrace();
         } catch (Exception e)
         {
-            //예외가 발생했을 때 실행할 코드
-            //입력 관련 예외
-            if (e instanceof InputMismatchException)
-            {
-                System.out.println("입력 관련 예외");
-            }
-
-            //파일 찾을 수 없음 예외
-            else if (e instanceof FileNotFoundException)
-            {
-                System.out.println("파일 찾을 수 없음 예외");
-            }
             e.printStackTrace();
         }
     }
-
-
 }
